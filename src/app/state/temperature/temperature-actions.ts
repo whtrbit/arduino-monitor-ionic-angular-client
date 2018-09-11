@@ -2,7 +2,7 @@ import {Action} from '@ngrx/store';
 import Temperature from '../../common/models/temperature/temperature';
 
 export enum TemperatureStateActionTypes {
-    AddAll = '[Temperature] addAll'
+    AddAll = '[Temperature] adds all temperatures to store'
 }
 
 export class TemperatureAddAllAction implements Action {

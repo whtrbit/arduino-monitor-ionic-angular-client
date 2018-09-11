@@ -26,7 +26,10 @@
     "@ionic/angular": "4.0.0-beta.7",
     "@ngrx/store": "^6.1.0",
     "@ngrx/store-devtools": "^6.1.0",
+    "angularfire2": "^5.0.1",
     "core-js": "^2.5.3",
+    "firebase": "^5.4.2",
+    "moment": "^2.22.2",
     "rxjs": "6.2.2",
     "zone.js": "^0.8.26"
   },

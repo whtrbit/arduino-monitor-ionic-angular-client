@@ -40,20 +40,5 @@ export class AppComponent {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
         });
-
-        this.store.dispatch(new TemperatureAddAllAction([
-            {
-                celsius: 15,
-                date: 'My date to format'
-            },
-            {
-                celsius: 21,
-                date: 'My date to format'
-            }
-        ]));
-
-        this.store.select(AppStateSlices.temperature).subscribe((temperature) => {
-            console.log(temperature);
-        });
     }
 }
