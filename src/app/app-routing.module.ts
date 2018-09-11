@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
       path: 'temperature',
-      loadChildren: './pages/temperature/temperature.module#TemperaturePageModule'
+      loadChildren: './pages/temperature/temperature-page.module#TemperaturePageModule'
   }
 ];
 
