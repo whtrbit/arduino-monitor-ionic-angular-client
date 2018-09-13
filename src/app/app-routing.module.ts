@@ -10,10 +10,6 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: './pages/home/home.module#HomePageModule'
-  },
-  {
-      path: 'temperature',
-      loadChildren: './pages/temperature/temperature-page.module#TemperaturePageModule'
   }
 ];
 

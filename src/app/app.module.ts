@@ -10,14 +10,10 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
-import {AngularFireModule} from 'angularfire2';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
-
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {temperatureReducer} from './state/temperature/temperature-reducer';
 import {AppStateSlices} from './state/app-state-slices';
-import {environment} from '../environments/environment';
 
 @NgModule({
     declarations: [AppComponent],
@@ -32,9 +28,7 @@ import {environment} from '../environments/environment';
         }),
         StoreDevtoolsModule.instrument({
             maxAge: 25
-        }),
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule
+        })
     ],
     providers: [
         StatusBar,

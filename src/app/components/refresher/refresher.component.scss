@@ -1,0 +1,15 @@
+$refresher-size: 28px;
+
+.refresher {
+  position: absolute;
+  top: 3px;
+  right: 24px;
+  padding: 12px;
+  width: $refresher-size;
+  height: $refresher-size;
+
+  .hydrated {
+    width: $refresher-size;
+    height: $refresher-size;
+  }
+}
