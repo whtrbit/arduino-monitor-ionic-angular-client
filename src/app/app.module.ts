@@ -14,6 +14,8 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {temperatureReducer} from './state/temperature/temperature-reducer';
 import {AppStateSlices} from './state/app-state-slices';
+import {metaReducers} from './state/local-storage-sync';
+
 
 @NgModule({
     declarations: [AppComponent],
@@ -23,9 +25,12 @@ import {AppStateSlices} from './state/app-state-slices';
         IonicModule.forRoot(),
         AppRoutingModule,
         HttpClientModule,
-        StoreModule.forRoot({
-            [AppStateSlices.temperature]: temperatureReducer
-        }),
+        StoreModule.forRoot(
+          {
+              [AppStateSlices.temperature]: temperatureReducer
+          },
+          {metaReducers}
+        ),
         StoreDevtoolsModule.instrument({
             maxAge: 25
         })

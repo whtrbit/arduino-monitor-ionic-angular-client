@@ -1,15 +1,21 @@
-<ion-header>
+<ion-header class="thm-batman-bg--light">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Arduino Monitor
-    </ion-title>
+    <ion-title>Arduino Monitor</ion-title>
     <arm-refresher></arm-refresher>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  Home
+<ion-content padding class="thm-batman-bg">
+  <ion-row>
+    <ion-col>
+      <div class="c-box">
+        <div class="c-box__icon">
+          <ion-icon name="thermometer"></ion-icon>
+        </div>
+        <h2 class="c-box__title">Temperature</h2>
+        <div class="c-box__value" *ngIf="temperature">{{ temperature.celsius }}°C</div>
+        <div class="c-box__value" *ngIf="!temperature">--</div>
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-content>

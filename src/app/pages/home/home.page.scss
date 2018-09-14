@@ -1,1 +1,22 @@
+@import '../../../theme/variables';
 
+.c-box {
+    background-color: $thm-bg-secondary;
+    border-radius: 16px;
+    margin: 8px;
+    padding: 24px;
+
+    &__icon {
+        font-size: 50px;
+        padding: 32px 0;
+    }
+    &__title {
+        margin: 0;
+    }
+    &__value {
+        color: $thm-color-secondary;
+        font-size: 21px;
+        font-weight: 600;
+        margin-top: 8px;
+    }
+}
