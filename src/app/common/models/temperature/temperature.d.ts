@@ -1,4 +1,4 @@
 export default interface Temperature {
     celsius: number;
-    date: string;
+    date: number;
 }

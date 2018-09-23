@@ -1,3 +1,5 @@
 export enum AppStateSlices {
-    temperature = 'temperature'
+    temperature = 'temperature',
+    proximity = 'proximity'
 }
+

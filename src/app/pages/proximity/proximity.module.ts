@@ -10,7 +10,6 @@ import {ProximityPage} from './proximity.page';
 const routes: Routes = [
     {
         path: '',
-        path: '',
         component: ProximityPage
     }
 ];
@@ -20,7 +19,8 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         IonicModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+
     ],
     declarations: [ProximityPage]
 })
