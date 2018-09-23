@@ -16,7 +16,6 @@ import {temperatureReducer} from './state/temperature/temperature-reducer';
 import {AppStateSlices} from './state/app-state-slices';
 import {metaReducers} from './state/local-storage-sync';
 
-
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
