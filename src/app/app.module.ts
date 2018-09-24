@@ -14,7 +14,6 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {temperatureReducer} from './state/temperature/temperature-reducer';
 import {proximityReducer} from './state/proximity/proximity-reducer';
-import {AppStateSlices} from './state/app-state-slices';
 import {metaReducers} from './state/local-storage-sync';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
@@ -30,8 +29,8 @@ import {environment} from '../environments/environment';
         HttpClientModule,
         StoreModule.forRoot(
           {
-              [AppStateSlices.temperature]: temperatureReducer,
-              [AppStateSlices.proximity]: proximityReducer
+              'temperature': temperatureReducer,
+              'proximity': proximityReducer
           },
           {metaReducers}
         ),

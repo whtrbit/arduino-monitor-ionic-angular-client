@@ -1,5 +1,4 @@
-export enum AppStateSlices {
-    temperature = 'temperature',
-    proximity = 'proximity'
-}
-
+export const AppStateSlices = {
+    temperature: 'temperature',
+    proximity: 'proximity'
+};

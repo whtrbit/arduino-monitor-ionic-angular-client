@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
 import {ProximityService} from './proximity.service';
-import Proximity from '../../common/models/proximity/proximity';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../state/app-state';
 import {AppStateSlices} from '../../state/app-state-slices';
