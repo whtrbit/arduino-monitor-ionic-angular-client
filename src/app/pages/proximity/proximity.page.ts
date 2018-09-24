@@ -27,7 +27,7 @@ export class ProximityPage implements OnInit {
         private store: Store<AppState>
     ) {}
 
-    ngOnInit (): void {
+    public ngOnInit (): void {
         this.proximityService.initializeStoreUpdate();
         this.store.select(AppStateSlices.proximity).subscribe((proximityState) => {
             if (proximityState.all) {
@@ -49,6 +49,7 @@ export class ProximityPage implements OnInit {
     public detachAlarm(): void {
         this.proximityService.detachAlarm();
         this.proximityAlarm.isSet = this.proximityService.isAlarmSetup;
+        this.proximityAlarm.alarm = null;
         this.proximityAlarmSub.unsubscribe();
     }
 }
