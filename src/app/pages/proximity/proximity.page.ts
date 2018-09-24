@@ -13,8 +13,14 @@ import {Subscription} from 'rxjs/Rx';
     styleUrls: ['./proximity.page.scss'],
 })
 export class ProximityPage implements OnInit {
-    public proximityAlarms: null | Proximity[] = null;
-    public proximityAlarm: null | Proximity = null;
+    public proximityAlarms: null | object[] = null;
+    public proximityAlarm: {
+        isSet: boolean,
+        alarm: null | object
+    } = {
+        isSet: false,
+        alarm: null
+    };
     public proximityAlarmSub: Subscription;
 
     constructor(
@@ -25,19 +31,25 @@ export class ProximityPage implements OnInit {
     ngOnInit (): void {
         this.proximityService.initializeStoreUpdate();
         this.store.select(AppStateSlices.proximity).subscribe((proximityState) => {
-            this.proximityAlarms = proximityState.all;
+            if (proximityState.all) {
+                this.proximityAlarms = this.proximityService.decorateProximityAlarmsForView(proximityState.all);
+            }
         });
     }
 
     public attachAlarm(): void {
         this.proximityService.attachAlarm();
+        this.proximityAlarm.isSet = this.proximityService.isAlarmSetup;
         this.proximityAlarmSub = this.store.select(AppStateSlices.proximity).subscribe((proximityState) => {
-            this.proximityAlarm = proximityState.alarm;
+            if (proximityState.alarm) {
+                this.proximityAlarm.alarm = this.proximityService.decorateProximityAlarmForView(proximityState.alarm);
+            }
         });
     }
 
     public detachAlarm(): void {
         this.proximityService.detachAlarm();
+        this.proximityAlarm.isSet = this.proximityService.isAlarmSetup;
         this.proximityAlarmSub.unsubscribe();
     }
 }

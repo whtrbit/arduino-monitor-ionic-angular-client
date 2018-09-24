@@ -1,20 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Proximity alarm</ion-title>
+    <a routerLink="/" class="c-toolbar-back">
+      <ion-icon name="arrow-back" size="large" class="c-toolbar-back__icon"></ion-icon>
+    </a>
+    <ion-title class="c-toolbar-title">Proximity alarm</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <button (click)="attachAlarm()">Attach alarm</button>
-  <button (click)="detachAlarm()">Detach alarm</button>
+  <div class="c-proximity-alarm">
+    <button class="c-proximity-button" (click)="attachAlarm()">Attach alarm</button>
+    <button class="c-proximity-button" (click)="detachAlarm()">Detach alarm</button>
 
-  <div *ngIf="proximityAlarm">
-    {{ proximityAlarm | json }}
+    <div *ngIf="proximityAlarm.isSet">
+      <div class="c-proximity-alarm__info">Alarm set up.<br>Waiting for proximity sensor to detect distance changes...</div>
+    </div>
+
+    <div *ngIf="proximityAlarm.isSet && proximityAlarm.alarm">
+      <div class="c-proximity-alarm__new c-proximity-box">
+        <div class="c-proximity-box__distance">{{ proximityAlarm.alarm.distance }}</div>
+        <div class="c-proximity-box__date">{{ proximityAlarm.alarm.date }}</div>
+      </div>
+    </div>
   </div>
 
-  <ul *ngIf="proximityAlarms">
-    <li *ngFor="let alarm of proximityAlarms">
-      {{ alarm | json }}
-    </li>
-  </ul>
+  <div *ngIf="proximityAlarms">
+    <div *ngFor="let alarm of proximityAlarms">
+      <div class="c-proximity-box">
+        <div class="c-proximity-box__distance">{{ alarm.distance }}</div>
+        <div class="c-proximity-box__date">{{ alarm.date }}</div>
+      </div>
+    </div>
+  </div>
 </ion-content>

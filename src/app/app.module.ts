@@ -16,8 +16,8 @@ import {temperatureReducer} from './state/temperature/temperature-reducer';
 import {proximityReducer} from './state/proximity/proximity-reducer';
 import {AppStateSlices} from './state/app-state-slices';
 import {metaReducers} from './state/local-storage-sync';
-import {AngularFireModule} from 'angularfire2';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {environment} from '../environments/environment';
 
 @NgModule({

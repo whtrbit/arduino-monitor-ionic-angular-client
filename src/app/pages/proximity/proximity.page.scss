@@ -1,0 +1,69 @@
+@import '../../../theme/variables';
+
+.c-proximity-box {
+    background-color: $thm-bg-secondary;
+    border-radius: 4px;
+    margin: 4px 0;
+    padding: 16px;
+
+    &__date {
+        color: $thm-color-secondary;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    &__distance {
+        color: $thm-color-primary;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+}
+
+.c-proximity-button {
+    display: inline-block;
+    width: 49%;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    outline: none;
+    border: none;
+
+    &:nth-child(1) {
+        margin-right: 1%;
+        background: #8bc34a;
+    }
+    &:nth-child(2) {
+        margin-left: 1%;
+        background: #f44336;
+    }
+}
+
+.c-proximity-alarm {
+    margin-bottom: 24px;
+
+    &__info {
+        color: $thm-color-secondary;
+        font-size: 15px;
+        margin: 24px;
+    }
+    &__new {
+        margin: 24px;
+    }
+}
+
+.c-toolbar-title {
+    padding-left: 48px;
+}
+
+.c-toolbar-back {
+    position: absolute;
+    z-index: 1;
+    left: 12px;
+    color: $thm-color-primary;
+
+    &__icon {
+        width: 28px;
+        height: 28px;
+    }
+}
