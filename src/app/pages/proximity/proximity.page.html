@@ -26,7 +26,7 @@
 
   <div *ngIf="proximityAlarms">
     <div *ngFor="let alarm of proximityAlarms">
-      <div class="c-proximity-box">
+      <div class="c-proximity-box" [class.active]="proximityAlarm.isPresentInAttachedAlarm">
         <div class="c-proximity-box__distance">{{ alarm.distance }}</div>
         <div class="c-proximity-box__date">{{ alarm.date }}</div>
       </div>

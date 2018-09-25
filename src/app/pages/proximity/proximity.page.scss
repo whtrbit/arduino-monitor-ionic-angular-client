@@ -16,12 +16,16 @@
         font-size: 20px;
         margin-bottom: 5px;
     }
+    &.is-present {
+        display: none;
+    }
 }
 
 .c-proximity-button {
     display: inline-block;
     width: 49%;
-    padding: 12px;
+    padding: 16px 0 14px;
+    line-height: 1;
     border-radius: 4px;
     font-size: 15px;
     text-transform: uppercase;
@@ -40,15 +44,15 @@
 }
 
 .c-proximity-alarm {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 
     &__info {
         color: $thm-color-secondary;
         font-size: 15px;
-        margin: 24px;
+        margin: 16px;
     }
     &__new {
-        margin: 24px;
+        margin: 16px;
     }
 }
 
