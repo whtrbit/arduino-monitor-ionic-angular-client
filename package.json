@@ -1,8 +1,9 @@
 {
-  "name": "tabs",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "arduino-monitor-ionic-angular-client",
+  "description": "Mobile application for monitoring changes detected by Arduino device.",
+  "version": "1.0.0",
+  "author": "Grzegorz Bielak",
+  "homepage": "http://grzegorzbielak.pl",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -70,7 +71,6 @@
     "tslint": "~5.11.0",
     "typescript": "~2.9.2"
   },
-  "description": "An Ionic project",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
