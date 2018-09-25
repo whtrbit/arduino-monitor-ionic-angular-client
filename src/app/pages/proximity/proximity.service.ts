@@ -41,19 +41,15 @@ export class ProximityService {
     }
 
     public decorateProximityAlarmsForView(proximityAlarms: Proximity[]): object[] {
-        return proximityAlarms.map((proximityAlarm, idx) => {
-            if (this.isAlarmSetup && idx === 0) {
-                return this.decorateProximityAlarmForView(proximityAlarm, true);
-            }
+        return proximityAlarms.map((proximityAlarm) => {
             return this.decorateProximityAlarmForView(proximityAlarm);
         });
     }
 
-    public decorateProximityAlarmForView(proximityAlarm: Proximity, isPresentOnAlarm = false): object {
+    public decorateProximityAlarmForView(proximityAlarm: Proximity): object {
         return {
             date: moment(proximityAlarm.date).format('DD.MM.YYYY - HH:mm'),
-            distance: (proximityAlarm.distance / 100).toFixed(2) + 'm',
-            isPresentInAttachedAlarm: isPresentOnAlarm
+            distance: (proximityAlarm.distance / 100).toFixed(2) + 'm'
         };
     }
 }
